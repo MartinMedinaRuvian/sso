@@ -1,14 +1,14 @@
 module.exports ={
     configuracionHerokuProduccion:{
-        host:'us-cdbr-east-06.cleardb.net',
-        user:'b22987ef0d328b',
-        password:'a472f6b3',
-        database:'heroku_15a155694911967'
+        host:process.env.HOST_NUBE,
+        user:process.env.USER_NUBE,
+        password:process.env.PASSWORD_NUBE,
+        database:process.env.DATABASE_NUBE
     },
     configuracionLocal:{
-        host:'127.0.0.1',
-        user:'root',
-        password:'123abc',
-        database:'single_sign_on'
+        host:process.env.HOST_LOCAL,
+        user:process.env.USER_LOCAL,
+        password:process.env.PASSWORD_LOCAL,
+        database:process.env.DATABASE_LOCAL
     }
 }
