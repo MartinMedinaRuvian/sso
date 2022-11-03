@@ -15,7 +15,7 @@ routers.post('/login', async (req, res)=> {
     } else {
       const passwordCorrecta = await bcrypt.desencriptar_password(password, account.password);
       if (passwordCorrecta) {
-        const token = jwt.sign({user}, 'sso')
+        const token = jwt.sign({user}, process.env.JWT_SIGN)
         const sectionDAO = new SectionDAO()
         const codeApp = (app && app.length > 0) ? app : '1'
         const section = {
